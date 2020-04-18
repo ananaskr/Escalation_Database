@@ -1,0 +1,20 @@
+version: '2'
+services:
+  web:
+    build: ./apache2/
+    volumes:
+      - ./web:/var/www/html/
+      - ./cron:/var/spool/cron/
+    ports:
+      - "7777:80"
+    links:
+      - redis
+    privileged: true
+  redis:
+    build: ./redis/
+    volumes:
+      - ./web:/var/www/html/
+      - ./cron:/var/spool/cron/
+    ports:
+      - "6379:6379"
+      - "2222:22"
