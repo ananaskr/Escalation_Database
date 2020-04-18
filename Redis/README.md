@@ -89,13 +89,13 @@ ssh-keygen -t rsa
 
 2. Put the key in the `exp_resp.py` and replacing the path and dbfilename. 
 
-![](img/1.png)
+![](./img/1.png)
 
 3. Put the payload in the vulnerable point.
 
 4. Login in with `ssh -p port user@ip -i path_of_private_key`
 
-![](img/2.png)
+![](./img/2.png)
 
 
 ### 0x04 Slave
@@ -111,7 +111,7 @@ After Redis 4.x, it adds a module function, it can be utilized to getshell.
 
 If you can access the redis directily, you can run the `exp_slave.py`. Then you can interact with shell. like this:
 
-![](img/3.png)
+![](./img/3.png)
 
 If you access the redis by SSRF in intranet, you can run `Redis_Rogue_Server.py` and then send the command with `gopher://` or `dict://`.
 
